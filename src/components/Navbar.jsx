@@ -6,78 +6,78 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
-import logo from "../assets/aveoblack.png"; // Make sure this image exists
+import { Link } from "react-router-dom";
+import logo from "../assets/aveoblack.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navLinks = ["HOME", "SHIRT", "SHOP", "SHORTCODES", "BLOG", "CONTACT US"];
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-white text-black shadow-md font-inter">
-      {/* 🔔 Offer Marquee Banner */}
-      <div className="bg-yellow-100 text-red-600 text-xs font-semibold py-2 text-center">
-        <marquee behavior="scroll" direction="left" scrollamount="5">
-          Limited Time Offer: Get Flat 50% OFF on All T-Shirts & Hoodies — Grab Yours Now!
-        </marquee>
-      </div>
-
-      {/* 🔳 Main Nav */}
       <div className="flex items-center justify-between px-4 md:px-10 py-4">
-        {/* 🍔 Mobile Menu Icon */}
-        <div className="md:hidden">
-          {isOpen ? (
-            <FaTimes
-              onClick={() => setIsOpen(false)}
-              className="text-xl cursor-pointer"
-            />
-          ) : (
-            <FaBars
-              onClick={() => setIsOpen(true)}
-              className="text-xl cursor-pointer"
-            />
-          )}
+
+        {/* Logo on the LEFT */}
+        <div className="flex-shrink-0">
+          <Link to="/">
+            <img src={logo} alt="Aveo Logo" className="h-8 md:h-14" />
+          </Link>
         </div>
 
-        {/* 🧭 Desktop Nav Left */}
-        <ul className="hidden md:flex gap-6 text-sm font-medium">
-          {navLinks.slice(0, 3).map((link, idx) => (
-            <li
-              key={idx}
-              className="hover:text-gray-500 cursor-pointer transition-colors duration-200"
-            >
-              {link}
-            </li>
-          ))}
+        {/* Nav links CENTERED */}
+        <ul className="hidden md:flex gap-8 text-sm font-semibold absolute left-1/2 transform -translate-x-1/2">
+          <li>
+            <Link to="/" className="hover:text-gray-500 transition">HOME</Link>
+          </li>
+          <li
+            className="relative"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <span className="hover:text-gray-500 cursor-pointer">APPAREL</span>
+            {dropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 bg-white shadow-md rounded-lg py-2 w-40 z-50">
+                <Link to="/collection#tshirt" className="block px-4 py-2 hover:bg-gray-100">T-Shirt</Link>
+                <Link to="/collection#shirt" className="block px-4 py-2 hover:bg-gray-100">Shirt</Link>
+                <Link to="/collection#hoodie" className="block px-4 py-2 hover:bg-gray-100">Hoodie</Link>
+              </div>
+            )}
+          </li>
+          <li><Link to="/lookbook" className="hover:text-gray-500 transition">LOOKBOOK</Link></li>
+          <li><Link to="/our-story" className="hover:text-gray-500 transition">OUR STORY</Link></li>
+          <li><Link to="/blogs" className="hover:text-gray-500 transition">BLOGS</Link></li>
+          <li><Link to="/contact" className="hover:text-gray-500 transition">CONTACT</Link></li>
         </ul>
 
-        {/* 🖼️ Logo Centered */}
-        <img src={logo} alt="Aveo Logo" className="h-8 md:h-10 mx-auto" />
-
-        {/* 🔘 Right Icons */}
+        {/* Icons on RIGHT + Mobile Toggle */}
         <div className="flex items-center gap-4 text-lg">
           <FaSearch className="cursor-pointer hover:text-gray-600" />
           <FaUser className="cursor-pointer hover:text-gray-600" />
           <div className="relative">
             <FaShoppingBag className="cursor-pointer hover:text-gray-600" />
-            <span className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] px-1 rounded-full">
-              0
-            </span>
+            <span className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px] px-1 rounded-full">0</span>
+          </div>
+          <div className="md:hidden">
+            {isOpen ? (
+              <FaTimes onClick={() => setIsOpen(false)} className="text-xl cursor-pointer" />
+            ) : (
+              <FaBars onClick={() => setIsOpen(true)} className="text-xl cursor-pointer" />
+            )}
           </div>
         </div>
       </div>
 
-      {/* 📱 Fullscreen Mobile Nav */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-white z-40 flex flex-col items-center justify-center space-y-6 text-xl font-semibold transition-all duration-300">
-          {navLinks.map((link, idx) => (
-            <div
-              key={idx}
-              className="hover:text-gray-500 cursor-pointer"
-              onClick={() => setIsOpen(false)}
-            >
-              {link}
-            </div>
-          ))}
+        <div className="fixed top-0 left-0 w-full h-full bg-white z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold transition-all duration-300">
+          <Link to="/" onClick={() => setIsOpen(false)}>HOME</Link>
+          <Link to="/collection#tshirt" onClick={() => setIsOpen(false)}>T-Shirt</Link>
+          <Link to="/collection#shirt" onClick={() => setIsOpen(false)}>Shirt</Link>
+          <Link to="/collection#hoodie" onClick={() => setIsOpen(false)}>Hoodie</Link>
+          <Link to="/lookbook" onClick={() => setIsOpen(false)}>LOOKBOOK</Link>
+          <Link to="/our-story" onClick={() => setIsOpen(false)}>OUR STORY</Link>
+          <Link to="/blogs" onClick={() => setIsOpen(false)}>BLOGS</Link>
+          <Link to="/contact" onClick={() => setIsOpen(false)}>CONTACT</Link>
         </div>
       )}
     </div>
