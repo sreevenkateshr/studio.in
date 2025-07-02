@@ -46,14 +46,7 @@ export default function Contact() {
           </form>
 
           <div className="mt-12 text-center">
-            <h2 className="text-xl font-bold mb-2">Aveo Clothing</h2>
-            <p className="text-sm">
-              support@aveoclothing.com <br />
-              +91 98765 43210
-            </p>
-            <p className="mt-4 text-xs text-gray-500">
-              123 Street Name, Fashion City, India
-            </p>
+            
           </div>
         </div>
       </div>
