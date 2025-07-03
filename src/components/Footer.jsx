@@ -11,11 +11,11 @@ import logo from "../assets/aveo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white text-sm font-light px-6 md:px-16 lg:px-28 py-20 font-inter">
-      <div className="flex flex-col lg:flex-row flex-wrap justify-between gap-16">
+    <footer className="bg-black text-white text-sm font-light px-6 md:px-16 lg:px-28 py-16 font-inter">
+      <div className="flex flex-col lg:flex-row flex-wrap justify-between gap-12 md:gap-16">
         {/* Logo + Contact */}
         <div className="space-y-6 w-full lg:w-1/4">
-          <img src={logo} alt="Aveo Logo" className="w-500 h-500" />
+          <img src={logo} alt="Aveo Logo" className="w-400 h-400" />
           <div className="space-y-3 text-gray-300">
             <div className="flex items-start gap-3">
               <FaMapMarkerAlt className="mt-1" />
@@ -86,7 +86,7 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="text-gray-500 text-xs text-center mt-20 border-t border-gray-800 pt-6">
+      <div className="text-gray-500 text-xs text-center mt-12 border-t border-gray-800 pt-6">
         ©2025 Aveo. All rights reserved.
       </div>
     </footer>

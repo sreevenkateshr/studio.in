@@ -15,3 +15,14 @@ body {
   font-family: 'Inter', sans-serif;
   
 }
+
+.arrow {
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #fafafa;
+  margin: 0;
+  position: absolute;
+}
