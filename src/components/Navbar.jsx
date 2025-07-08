@@ -33,9 +33,7 @@ export default function Navbar() {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <span className="hover:text-gray-500 cursor-pointer">
-              APPAREL
-            </span>
+            <span className="hover:text-gray-500 cursor-pointer">APPAREL</span>
             {dropdownOpen && (
               <div className="absolute top-full left-0 mt-2 bg-white shadow-md rounded-lg py-2 w-40 z-50">
                 <Link
@@ -44,10 +42,7 @@ export default function Navbar() {
                 >
                   T-Shirt
                 </Link>
-                <Link
-                  to="/shirt"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                >
+                <Link to="/shirt" className="block px-4 py-2 hover:bg-gray-100">
                   Shirt
                 </Link>
                 <Link
@@ -110,14 +105,30 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-white z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold transition-all duration-300">
-          <Link to="/" onClick={() => setIsOpen(false)}>HOME</Link>
-          <Link to="/tshirt" onClick={() => setIsOpen(false)}>T-Shirt</Link>
-          <Link to="/shirt" onClick={() => setIsOpen(false)}>Shirt</Link>
-          <Link to="/hoodie" onClick={() => setIsOpen(false)}>Hoodie</Link>
-          <Link to="/lookbook" onClick={() => setIsOpen(false)}>LOOKBOOK</Link>
-          <Link to="/our-story" onClick={() => setIsOpen(false)}>OUR STORY</Link>
-          <Link to="/blogs" onClick={() => setIsOpen(false)}>BLOGS</Link>
-          <Link to="/contact" onClick={() => setIsOpen(false)}>CONTACT US</Link>
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            HOME
+          </Link>
+          <Link to="/tshirt" onClick={() => setIsOpen(false)}>
+            T-Shirt
+          </Link>
+          <Link to="/shirt" onClick={() => setIsOpen(false)}>
+            Shirt
+          </Link>
+          <Link to="/hoodie" onClick={() => setIsOpen(false)}>
+            Hoodie
+          </Link>
+          <Link to="/lookbook" onClick={() => setIsOpen(false)}>
+            LOOKBOOK
+          </Link>
+          <Link to="/our-story" onClick={() => setIsOpen(false)}>
+            OUR STORY
+          </Link>
+          <Link to="/blogs" onClick={() => setIsOpen(false)}>
+            BLOGS
+          </Link>
+          <Link to="/contact" onClick={() => setIsOpen(false)}>
+            CONTACT US
+          </Link>
         </div>
       )}
     </div>
