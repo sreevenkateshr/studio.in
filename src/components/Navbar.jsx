@@ -39,19 +39,19 @@ export default function Navbar() {
             {dropdownOpen && (
               <div className="absolute top-full left-0 mt-2 bg-white shadow-md rounded-lg py-2 w-40 z-50">
                 <Link
-                  to="/collection#tshirt"
+                  to="/tshirt"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   T-Shirt
                 </Link>
                 <Link
-                  to="/collection#shirt"
+                  to="/shirt"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Shirt
                 </Link>
                 <Link
-                  to="/collection#hoodie"
+                  to="/hoodie"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   Hoodie
@@ -111,9 +111,9 @@ export default function Navbar() {
       {isOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-white z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold transition-all duration-300">
           <Link to="/" onClick={() => setIsOpen(false)}>HOME</Link>
-          <Link to="/collection#tshirt" onClick={() => setIsOpen(false)}>T-Shirt</Link>
-          <Link to="/collection#shirt" onClick={() => setIsOpen(false)}>Shirt</Link>
-          <Link to="/collection#hoodie" onClick={() => setIsOpen(false)}>Hoodie</Link>
+          <Link to="/tshirt" onClick={() => setIsOpen(false)}>T-Shirt</Link>
+          <Link to="/shirt" onClick={() => setIsOpen(false)}>Shirt</Link>
+          <Link to="/hoodie" onClick={() => setIsOpen(false)}>Hoodie</Link>
           <Link to="/lookbook" onClick={() => setIsOpen(false)}>LOOKBOOK</Link>
           <Link to="/our-story" onClick={() => setIsOpen(false)}>OUR STORY</Link>
           <Link to="/blogs" onClick={() => setIsOpen(false)}>BLOGS</Link>
