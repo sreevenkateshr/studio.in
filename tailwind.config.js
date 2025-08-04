@@ -4,6 +4,12 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  extend: {
+    fontFamily: {
+      spectral: ['"Spectral SC"', 'serif'],
+    },
+  },
+  
   theme: {
     extend: {
       container: {
@@ -44,4 +50,14 @@ module.exports = {
   ],
 };
 
+// tailwind.config.js
+// module.exports = {
+//   theme: {
+//     extend: {
+//       fontFamily: {
+//         spectral: ['"Spectral SC"', 'serif'],
+//       },
+//     },
+//   },
+// }
 
