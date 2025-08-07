@@ -19,6 +19,8 @@ function App() {
         <Route path="/tshirt" element={<TShirt />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/collection" element={<Collection />} />
+        <Route path="/collection" element={<Collection />} />
+
       </Routes>
     </>
   );
