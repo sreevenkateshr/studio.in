@@ -7,6 +7,7 @@ import RecentArrivals from "../components/RecentArrivals";
 import TimelessStaples from "../components/TimelessStaples";
 import Aveosway from "../components/Aveosway";   // <== import here
 import Midslide from "../components/Midslide"
+import Homevideo from "../components/Homevideo"
 import Homebookus from "../components/Homebookus";
 import Testimonials from "../components/Testimonials";
 import BestSellers from "../components/BestSellers";
@@ -23,6 +24,8 @@ export default function Home() {
      <Aveosway />
        <RecentArrivals />
       <Midslide />
+      <Testimonials />
+      <Homevideo />
       <Homebookus />
       <Footer />
     </>
@@ -32,5 +35,4 @@ export default function Home() {
 
       // <BestSellers />
 
-      //       <Testimonials />
 

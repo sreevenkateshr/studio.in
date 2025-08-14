@@ -1,60 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 
 const testimonials = [
-  {
-    quote: "Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I wonder why we think faster than we speak. Hobbes: Probably so we can think twice.",
-    image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg",
-    author: "Pelican Steve",
-    source: "LittleSnippets.net"
-  },
-  {
-    quote: "Thank you. before I begin, I'd like everyone to notice that my report is in a professional, clear plastic binder... When a report looks this good, you know it'll get an A. That's a tip kids. Write it down.",
-    image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample27.jpg",
-    author: "Max Conversion",
-    source: "LittleSnippets.net"
-  },
-  {
-    quote: "My behaviour is addictive functioning in a disease process of toxic co-dependency. I need holistic healing and wellness before I'll accept any responsibility for my actions.",
-    image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg",
-    author: "Eleanor Faint",
-    source: "LittleSnippets.net"
-  }
+  { text: "Thank you zerowatts to capture best moments of our wedding & reception. We loved the pre-wedding shoots and the tradition pictures. It was amazing working with you. Team of photographers are very flexible to work with. Great effort on End to end follow up to make sure we received Albums.", name: "THEEBICA + PURUSHOTH" },
+  { text: "We had the pleasure of working with Zerowatts Photography for our engagement, reception, and wedding events in May 2024, and we couldn’t be happier with the results! From start to finish, their team demonstrated incredible professionalism and creativity.", name: "JEEVITHA + PAWAN" },
+  { text: "We have booked Zerowatts for engagement, pre-wedding shoot, reception and wedding. They did a wonderful job and made us feel really comfortable. Overall experience with them all as top notch! Would really love to work with them again :)", name: "PRATIBHA + ASHWANTH" },
+  { text: "Absolutely fantastic photography service! They captured every beautiful moment perfectly and the quality of the pictures is outstanding.", name: "ANITA + RAJESH" },
+  { text: "A wonderful experience from start to finish. The team was professional, creative, and very easy to work with.", name: "DIVYA + KARTHIK" },
+  { text: "Every shot was beautifully framed and perfectly edited. We will treasure these memories forever.", name: "SNEHA + VIKRAM" },
+  { text: "Professional, friendly, and incredibly talented team. The pictures exceeded our expectations.", name: "KAVYA + RAVI" },
+  { text: "The entire process was seamless. From booking to delivery, everything was handled with care.", name: "MEERA + SANJAY" },
+  { text: "We loved every single photo! They truly captured the emotions and beauty of our special day.", name: "PRIYA + MANOJ" },
+  { text: "Superb service! The team went above and beyond to make sure we got the perfect shots.", name: "RITHIKA + ARUN" },
 ];
 
-export default function FunkyQuoteTestimonials() {
-  return (
-    <section className="bg-black py-16 px-4 text-center">
-      <h2 className="text-4xl font-bold text-white mb-4">Testimonials</h2>
-      <p className="text-gray-300 max-w-xl mx-auto mb-12">
-        Hear what our amazing customers have to say about us. Their words inspire us to keep delivering the best.
-      </p>
+export default function TestimonialsSlider() {
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 3;
 
-      <div className="flex flex-wrap justify-center gap-8">
-        {testimonials.map((item, idx) => (
-          <figure
-            key={idx}
-            className="relative w-full max-w-xs text-left mx-2"
-          >
-            <blockquote className="relative bg-gray-100 rounded-lg p-6 text-sm italic font-medium leading-relaxed">
-              <span className="absolute top-4 left-4 text-4xl text-gray-400">&ldquo;</span>
-              {item.quote}
-              <span className="absolute bottom-4 right-4 text-4xl text-gray-400">&rdquo;</span>
-              <div className="arrow w-0 h-0 border-l-0 border-r-[25px] border-t-[25px] border-t-gray-100 absolute top-full left-6"></div>
-            </blockquote>
-            <img
-              src={item.image}
-              alt={item.author}
-              className="w-[90px] h-[90px] rounded-full mt-10 ml-3"
-            />
-            <div className="author absolute bottom-10 left-0 pl-[120px] uppercase text-white transform translate-y-1/2">
-              <h5 className="font-extrabold opacity-80">
-                {item.author}
-                <span className="block normal-case font-normal pl-1">{item.source}</span>
-              </h5>
+  const next = () => setStartIndex((prev) => (prev + visibleCount) % testimonials.length);
+  const prev = () => setStartIndex((prev) => (prev - visibleCount + testimonials.length) % testimonials.length);
+
+  const visibleTestimonials = [];
+  for (let i = 0; i < visibleCount; i++) {
+    visibleTestimonials.push(testimonials[(startIndex + i) % testimonials.length]);
+  }
+
+  return (
+    <div className="bg-[#f4f3ef] py-20">
+      <div className="container mx-auto px-6 md:px-20 relative">
+        
+        {/* Header with arrows */}
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="text-sm tracking-[0.3em] text-gray-800 uppercase">TESTIMONIALS</h2>
+          <div className="flex space-x-6">
+            <button onClick={prev} className="text-2xl hover:text-gray-600">←</button>
+            <button onClick={next} className="text-2xl hover:text-gray-600">→</button>
+          </div>
+        </div>
+
+        {/* Testimonials Grid */}
+        <div className="grid md:grid-cols-3 gap-12">
+          {visibleTestimonials.map((t, idx) => (
+            <div key={idx} className="max-w-sm">
+              <p className="text-lg leading-relaxed text-gray-800 mb-6">{t.text}</p>
+              <p className="tracking-[0.3em] text-gray-900 font-medium">{t.name}</p>
             </div>
-          </figure>
-        ))}
+          ))}
+        </div>
+
       </div>
-    </section>
+    </div>
   );
 }
