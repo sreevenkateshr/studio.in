@@ -1,8 +1,8 @@
 import React from "react";
-import shirtsImg from "../assets/shirts.avif";
-import pantsImg from "../assets/pants.avif";
-import jacketsImg from "../assets/jackets.avif";
-import denimImg from "../assets/denim.avif";
+import shirtsImg from "../assets/wedding1.jpg";
+import pantsImg from "../assets/wedding2.jpg";
+import jacketsImg from "../assets/wedding3.jpg";
+import denimImg from "../assets/wedding4.jpg";
 
 export default function Categoryshowcase() {
   return (
@@ -11,7 +11,7 @@ export default function Categoryshowcase() {
         className="text-center text-4xl md:text-4xl mb-16"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
-        Shop By Category
+        Our Services
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10">

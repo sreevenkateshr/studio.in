@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/onepic.avif'; // Replace with actual image name
+import heroImage from '../assets/slide1.jpg'; // Replace with actual image name
 
 const SliderHero = () => {
   return (
