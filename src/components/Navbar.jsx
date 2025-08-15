@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // ✅ Import Link
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
@@ -41,21 +42,33 @@ const Navbar = () => {
               <li className="px-4 py-2 hover:bg-gray-100">Outdoor</li>
             </ul>
           </li>
-          <li>Portfolio</li>
+          <li className="hover:text-black">
+            <Link to="/portfolio">Portfolio</Link>
+          </li>
         </ul>
 
         {/* Center Logo */}
-        <div className="text-2xl font-extrabold tracking-tight text-gray-900">studio.in</div>
+        <div className="text-2xl font-extrabold tracking-tight text-gray-900">
+          <Link to="/">studio.in</Link>
+        </div>
 
         {/* Right Menu - Desktop */}
         <ul className="hidden md:flex space-x-4 absolute right-4 items-center text-gray-700 font-medium">
-          <li>About</li>
-          <li>Contact</li>
-          <li>
-            <button className="px-3 py-1.5 border border-gray-800 rounded hover:bg-gray-100">Get a Quote</button>
+          <li className="hover:text-black">
+            <Link to="Aboutus">About</Link>
+          </li>
+          <li className="hover:text-black">
+            <Link to="Contact">Contact</Link>
           </li>
           <li>
-            <button className="px-3 py-1.5 bg-black text-white rounded hover:bg-gray-800">Book Now</button>
+            <button className="px-3 py-1.5 border border-gray-800 rounded hover:bg-gray-100">
+              Get a Quote
+            </button>
+          </li>
+          <li>
+            <button className="px-3 py-1.5 bg-black text-white rounded hover:bg-gray-800">
+              Book Now
+            </button>
           </li>
         </ul>
 
@@ -91,14 +104,24 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
-            <li>Portfolio</li>
-            <li>About</li>
-            <li>Contact</li>
             <li>
-              <button className="w-full py-2 border border-gray-800 rounded hover:bg-gray-100">Get a Quote</button>
+              <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link>
             </li>
             <li>
-              <button className="w-full py-2 bg-black text-white rounded hover:bg-gray-800">Book Now</button>
+              <Link to="./pages/Aboutus" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+            </li>
+            <li>
+              <Link to="./pages/Contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+            </li>
+            <li>
+              <button className="w-full py-2 border border-gray-800 rounded hover:bg-gray-100">
+                Get a Quote
+              </button>
+            </li>
+            <li>
+              <button className="w-full py-2 bg-black text-white rounded hover:bg-gray-800">
+                Book Now
+              </button>
             </li>
           </ul>
         </div>

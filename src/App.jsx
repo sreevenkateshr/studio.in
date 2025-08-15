@@ -3,9 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Collection from "./pages/Collection";
-import Shirt from "./pages/Shirt"
-import TShirt from "./pages/T_Shirt"
-
+import Aboutus from "./pages/Aboutus";
 
 function App() {
   return (
@@ -13,16 +11,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shirt" element={<Shirt />} />
-        <Route path="/tshirt" element={<TShirt />} />
+        <Route path="/Aboutus" element={<Aboutus />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/collection" element={<Collection />} />
-        <Route path="/collection" element={<Collection />} />
-
       </Routes>
     </>
   );
 }
 
 export default App;
-
