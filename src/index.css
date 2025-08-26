@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spectral+SC:wght@400;600;700&display=swap');
 
@@ -31,4 +32,13 @@ body {
   border-top: 25px solid #fafafa;
   margin: 0;
   position: absolute;
+}
+
+
+:root {
+  --safe-area-inset-top: env(safe-area-inset-top);
+}
+
+.navbar-safe {
+  padding-top: var(--safe-area-inset-top);
 }

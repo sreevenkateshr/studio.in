@@ -10,53 +10,61 @@ const images = [img1, img2, img3, img4, img5];
 export default function Aveosway() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Auto-looping carousel
+  // Auto-forward carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // every 3 seconds
+    }, 3000); // change slide every 3s
     return () => clearInterval(interval);
   }, []);
 
   const getVisibleImages = () => {
     const result = [];
-    for (let i = -3; i <= 3; i++) {
-      const index = (activeIndex + i + images.length) % images.length;
-      result.push({ index, offset: i });
+    for (let i = 0; i < images.length; i++) {
+      const offset = (i - activeIndex + images.length) % images.length;
+      if (offset <= 2 || offset >= images.length - 2) {
+        result.push({
+          index: i,
+          offset: offset > 2 ? offset - images.length : offset,
+        });
+      }
     }
     return result;
   };
 
   return (
-    <div className="w-full h-[600px] mt-12 mb-12 flex justify-center items-center overflow-hidden relative">
+    <div className="w-full h-[650px] flex justify-center items-center bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
       <div className="relative w-full h-full flex items-center justify-center">
         {getVisibleImages().map(({ index, offset }) => {
-          const scale = 1 - Math.abs(offset) * 0.1;
-          const translateX = offset * 140;
-          const brightness = offset === 0 ? 1 : 0.9;
-          const opacity = 1 - Math.abs(offset) * 0.08;
-          const zIndex = 999 - Math.abs(offset);
+          const scale = 1 - Math.abs(offset) * 0.15;
+          const translateX = offset * 260; // spacing between images
+          const brightness = offset === 0 ? 1 : 0.5;
+          const opacity = 1 - Math.abs(offset) * 0.3;
+          const zIndex = 50 - Math.abs(offset);
 
           return (
             <div
               key={index}
-              className="absolute top-1/2 left-1/2 transition-all duration-700 ease-in-out"
+              className="absolute transition-transform transition-opacity duration-700 ease-in-out"
               style={{
-                transform: `translate(-50%, -50%) translateX(${translateX}px) scale(${scale})`,
+                transform: `translateX(${translateX}px) scale(${scale})`,
                 filter: `brightness(${brightness})`,
                 zIndex,
                 opacity,
               }}
             >
-              <div className="relative w-[300px] h-[400px] rounded-xl overflow-hidden shadow-xl">
+              <div className="relative w-[320px] h-[460px] rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white">
                 <img
                   src={images[index]}
                   alt={`carousel-${index}`}
                   className="w-full h-full object-cover"
                 />
-                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white text-xs px-5 py-2 rounded-full shadow-md hover:opacity-90 transition">
-                  Click Here
-                </button>
+                {/* CTA button only on active image */}
+                {offset === 0 && (
+                  <button className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white font-medium px-8 py-3 rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300">
+                    Click Here
+                  </button>
+                )}
               </div>
             </div>
           );

@@ -1,130 +1,14 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
+import Aboutuspage from "../components/Aboutuspage"
 
 
-const images = [
-  "https://i0.wp.com/paperboatweddingphotography.com/wp-content/uploads/2024/07/Thumb-Size-4.jpg?fit=2000%2C1325&ssl=1",
-  "https://i0.wp.com/paperboatweddingphotography.com/wp-content/uploads/2024/07/DSC00663.jpg?fit=1920%2C1280&ssl=1",
-  "https://i0.wp.com/paperboatweddingphotography.com/wp-content/uploads/2024/07/13-2.jpg?fit=1920%2C1280&ssl=1",
-];
-
-export default function Aboutus() {
+export default function Home() {
   return (
     <>
-
-      {/* Main about section */}
-      <div className="pt-24 pb-16 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-4">
-        {/* Left: Image Slider */}
-        <div>
-          <Swiper
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-            loop={true}
-            className="h-full"
-          >
-            {images.map((src, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={src}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-auto object-cover"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          <p className="mt-6 text-gray-700 leading-relaxed">
-            Paperboat is a wedding photography studio based in Kerala. We
-            specialize in creative and artistic wedding photography with a
-            natural relaxed style. Since 2010, couples have chosen Paper Boat
-            Wedding Studio for our breathtaking photography, relentless
-            professionalism, and personalized service. Our style is romantic,
-            timeless, and authentic.
-          </p>
-
-          <p className="mt-4 text-sm uppercase tracking-wide text-gray-500">
-            Have a look through our website at what we can offer you to make
-            your wedding day the most memorable of your life.
-          </p>
-        </div>
-
-        {/* Right: Text content */}
-        <div>
-          <h2 className="text-3xl md:text-4xl font-serif tracking-wide uppercase leading-snug">
-            Come to us as you are
-          </h2>
-          <h2 className="text-3xl md:text-4xl font-serif tracking-wide uppercase mt-1 leading-snug">
-            We’ll do the rest!
-          </h2>
-
-          <p className="mt-6 text-gray-700 leading-relaxed">
-            Our mission is simple – to tell your story by creating images that
-            burst with the passion and love that you as a couple share. We
-            promise not to spend hours posing or forcing you into something that
-            isn’t representative of your day. Sure, there is time for some
-            naturally posed images, but our drive is to be in the right place at
-            the right time, soaking up the atmosphere and preserving those
-            memories for you to keep forever.
-          </p>
-
-          <a
-            href="https://paperboatweddingphotography.com/contact-paperboat/"
-            className="mt-8 w-fit px-8 py-3 bg-[#B78D7C] text-white font-semibold uppercase tracking-wider rounded hover:opacity-90 transition"
-          >
-            Contact Us
-          </a>
-
-          <p className="mt-8 text-gray-700 leading-relaxed">
-            In 2017 we announced our new arrival – the Docu-Film, a perfect
-            completion of your photographic needs.
-          </p>
-
-          {/* Signature */}
-          <p className="mt-8 text-2xl italic text-[#B78D7C]">Team Paperboat</p>
-        </div>
-      </div>
-
-      {/* Founder Section - full width */}
-      <section className="bg-gray-50 py-16 px-6 lg:px-16">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-          {/* Text Content */}
-          <div className="md:col-span-2">
-            <h2 className="text-2xl md:text-3xl font-serif uppercase tracking-wide">
-              R Roshan
-            </h2>
-            <p className="text-sm uppercase tracking-widest text-gray-500 mt-1">
-              Founder
-            </p>
-            <p className="mt-6 text-gray-700 leading-relaxed text-justify">
-              Paperboat Wedding Photography was founded by a multi-talented
-              photographer, Mr. Roshan, who was well-known for his artistic
-              excellence and innovation. He hails from Thrissur district in
-              Kerala. He began his journey in his late 20s as a photographer and
-              later as a successful entrepreneur and an accomplished
-              photographer within the film and wedding industry. His journey has
-              nourished the company with his 15 dedicated years of hard work and
-              creativity. His notable industry hits include films like Salt N’
-              Pepper (2011), 22 Female Kottayam (2012), Ambili (2019),
-              Neelavelicham (2023), Romancham (2023) etc., and emerging with
-              many more upcoming renowned film projects. Today, his offerings to
-              Mollywood are limitless and irreplaceable.
-            </p>
-          </div>
-
-          {/* Image */}
-          <div className="flex justify-center">
-            <img
-              src="https://i0.wp.com/paperboatweddingphotography.com/wp-content/uploads/2021/03/roshan-founder.jpg?ssl=1"
-              alt="R Roshan"
-              className="w-64 h-64 object-cover rounded shadow-md"
-            />
-          </div>
-        </div>
-      </section>
-
+      <Aboutuspage />
+\
     </>
   );
 }
+
+
+

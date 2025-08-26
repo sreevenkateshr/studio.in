@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // ✅ Import Link
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import studioinlogo from "../assets/studioinlogo.png"; // Replace with your logo path
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,69 +11,79 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // 10px scroll triggers solid navbar
+      setIsScrolled(window.scrollY > 10); // solid navbar after 10px
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between md:justify-center relative">
-        
         {/* Left Menu - Desktop */}
         <ul className="hidden md:flex space-x-6 absolute left-4 text-gray-700 font-medium">
+          {/* Wedding Dropdown */}
           <li className="group relative cursor-pointer">
             Wedding
-            <ul className="absolute top-8 left-0 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-40 z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">Traditional</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Candid</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Destination</li>
+            <ul className="absolute top-8 left-0 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-44 z-50">
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/traditional">Traditional</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/candid">Candid</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/destination">Destination</Link>
+              </li>
             </ul>
           </li>
-          <li className="group relative cursor-pointer">
-            Kids
-            <ul className="absolute top-8 left-0 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-40 z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">Birthday</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Newborn</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Outdoor</li>
-            </ul>
+
+          {/* Kids Dropdown */}
+         <li className="hover:text-black">
+            <Link to="/Kids">Kids</Link>
           </li>
+
           <li className="hover:text-black">
             <Link to="/portfolio">Portfolio</Link>
           </li>
         </ul>
 
         {/* Center Logo */}
-        <div className="text-2xl font-extrabold tracking-tight text-gray-900">
-          <Link to="/">studio.in</Link>
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <Link to="/">
+            <img
+              src={studioinlogo}
+              alt="Studio Logo"
+              className="h-20 md:h-28 lg:h-32 w-auto max-w-full transition-transform duration-300 hover:scale-105"
+            />
+          </Link>
         </div>
 
         {/* Right Menu - Desktop */}
         <ul className="hidden md:flex space-x-4 absolute right-4 items-center text-gray-700 font-medium">
           <li className="hover:text-black">
-            <Link to="Aboutus">About</Link>
+            <Link to="/Aboutus">About</Link>
           </li>
           <li className="hover:text-black">
-            <Link to="Contact">Contact</Link>
+            <Link to="/Contact">Contact</Link>
           </li>
           <li>
-            <button className="px-3 py-1.5 border border-gray-800 rounded hover:bg-gray-100">
+            <button className="px-4 py-2 border border-gray-800 rounded-lg hover:bg-gray-100 transition">
               Get a Quote
             </button>
           </li>
           <li>
-            <button className="px-3 py-1.5 bg-black text-white rounded hover:bg-gray-800">
+            <button className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
               Book Now
             </button>
           </li>
         </ul>
 
-        {/* Mobile menu icon */}
+        {/* Mobile Menu Icon */}
         <div className="md:hidden">
           <button onClick={toggleMenu}>
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -82,44 +93,96 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white px-4 py-6 shadow-md">
+        <div className="md:hidden bg-white px-4 py-6 shadow-md animate-slide-down">
           <ul className="space-y-4 text-gray-700 font-medium">
+            {/* Wedding Accordion */}
             <li>
               <details>
                 <summary className="cursor-pointer">Wedding</summary>
                 <ul className="pl-4 mt-2 space-y-2">
-                  <li>Traditional</li>
-                  <li>Candid</li>
-                  <li>Destination</li>
+                  <li>
+                    <Link
+                      to="/wedding/traditional"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Traditional
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/wedding/candid"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Candid
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/wedding/destination"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Destination
+                    </Link>
+                  </li>
                 </ul>
               </details>
             </li>
+
+            {/* Kids Accordion */}
             <li>
               <details>
                 <summary className="cursor-pointer">Kids</summary>
                 <ul className="pl-4 mt-2 space-y-2">
-                  <li>Birthday</li>
-                  <li>Newborn</li>
-                  <li>Outdoor</li>
+                  <li>
+                    <Link
+                      to="/Kids"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Birthday
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/Kids"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Newborn
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/Kids"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Outdoor
+                    </Link>
+                  </li>
                 </ul>
               </details>
             </li>
+
             <li>
-              <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link>
+              <Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>
+                Portfolio
+              </Link>
             </li>
             <li>
-              <Link to="./pages/Aboutus" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+              <Link to="/Aboutus" onClick={() => setIsMobileMenuOpen(false)}>
+                About
+              </Link>
             </li>
             <li>
-              <Link to="./pages/Contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+              <Link to="/Contact" onClick={() => setIsMobileMenuOpen(false)}>
+                Contact
+              </Link>
             </li>
             <li>
-              <button className="w-full py-2 border border-gray-800 rounded hover:bg-gray-100">
+              <button className="w-full py-2 border border-gray-800 rounded-lg hover:bg-gray-100 transition">
                 Get a Quote
               </button>
             </li>
             <li>
-              <button className="w-full py-2 bg-black text-white rounded hover:bg-gray-800">
+              <button className="w-full py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
                 Book Now
               </button>
             </li>

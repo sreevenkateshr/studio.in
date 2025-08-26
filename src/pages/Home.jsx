@@ -5,7 +5,7 @@ import SelectedWorks from "../components/SelectedWorks"
 import Categoryshowcase from "../components/Categoryshowcase";
 import RecentArrivals from "../components/RecentArrivals";
 import TimelessStaples from "../components/TimelessStaples";
-import Aveosway from "../components/Aveosway";   // <== import here
+import Aveosway from "../components/Aveosway"; 
 import Midslide from "../components/Midslide"
 import Homevideo from "../components/Homevideo"
 import Homebookus from "../components/Homebookus";
