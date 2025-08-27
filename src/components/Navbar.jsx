@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import studioinlogo from "../assets/studioinlogo.png"; // Replace with your logo path
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // solid navbar after 10px
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -23,28 +24,36 @@ const Navbar = () => {
         isScrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between md:justify-center relative">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between relative">
         {/* Left Menu - Desktop */}
-        <ul className="hidden md:flex space-x-6 absolute left-4 text-gray-700 font-medium">
+        <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
           {/* Wedding Dropdown */}
-          <li className="group relative cursor-pointer">
-            Wedding
-            <ul className="absolute top-8 left-0 hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-44 z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">
-                <Link to="/wedding/traditional">Traditional</Link>
-              </li>
-              <li className="px-4 py-2 hover:bg-gray-100">
-                <Link to="/wedding/candid">Candid</Link>
-              </li>
-              <li className="px-4 py-2 hover:bg-gray-100">
-                <Link to="/wedding/destination">Destination</Link>
-              </li>
-            </ul>
+          <li
+            className="relative group cursor-pointer"
+            onMouseEnter={() => setOpenDropdown("wedding")}
+            onMouseLeave={() => setOpenDropdown(null)}
+          >
+            <div className="flex items-center gap-1">
+              Wedding <ChevronDown size={16} />
+            </div>
+            {openDropdown === "wedding" && (
+              <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-44 z-50 animate-fade-in">
+                <li className="px-4 py-2 hover:bg-gray-100">
+                  <Link to="/wedding/traditional">Traditional</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100">
+                  <Link to="/wedding/candid">Candid</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100">
+                  <Link to="/wedding/destination">Destination</Link>
+                </li>
+              </ul>
+            )}
           </li>
 
-          {/* Kids Dropdown */}
-         <li className="hover:text-black">
-            <Link to="/Kids">Kids</Link>
+          {/* Kids - Just a Direct Link (NO dropdown) */}
+          <li className="hover:text-black">
+            <Link to="/kidspage">Kids</Link>
           </li>
 
           <li className="hover:text-black">
@@ -58,13 +67,13 @@ const Navbar = () => {
             <img
               src={studioinlogo}
               alt="Studio Logo"
-              className="h-20 md:h-28 lg:h-32 w-auto max-w-full transition-transform duration-300 hover:scale-105"
+              className="h-20 md:h-24 lg:h-28 w-auto max-w-full transition-transform duration-300 hover:scale-105"
             />
           </Link>
         </div>
 
         {/* Right Menu - Desktop */}
-        <ul className="hidden md:flex space-x-4 absolute right-4 items-center text-gray-700 font-medium">
+        <ul className="hidden md:flex space-x-4 items-center text-gray-700 font-medium">
           <li className="hover:text-black">
             <Link to="/Aboutus">About</Link>
           </li>
@@ -98,7 +107,9 @@ const Navbar = () => {
             {/* Wedding Accordion */}
             <li>
               <details>
-                <summary className="cursor-pointer">Wedding</summary>
+                <summary className="cursor-pointer flex items-center justify-between">
+                  Wedding
+                </summary>
                 <ul className="pl-4 mt-2 space-y-2">
                   <li>
                     <Link
@@ -128,37 +139,11 @@ const Navbar = () => {
               </details>
             </li>
 
-            {/* Kids Accordion */}
+            {/* Kids Direct Link */}
             <li>
-              <details>
-                <summary className="cursor-pointer">Kids</summary>
-                <ul className="pl-4 mt-2 space-y-2">
-                  <li>
-                    <Link
-                      to="/Kids"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Birthday
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/Kids"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Newborn
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/Kids"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Outdoor
-                    </Link>
-                  </li>
-                </ul>
-              </details>
+              <Link to="/kidspage" onClick={() => setIsMobileMenuOpen(false)}>
+                Kids
+              </Link>
             </li>
 
             <li>

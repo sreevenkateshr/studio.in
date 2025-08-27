@@ -5,7 +5,7 @@ import Contact from "./pages/Contact";
 import Collection from "./pages/Collection";
 import Aboutus from "./pages/Aboutus";
 import Portfolio from "./components/Portfolio";
-import Kids from "./components/Kids";
+import Kidspage from "./pages/Kidspage";
 import Footer from "./components/Footer";
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Aboutus" element={<Aboutus />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/Kids" element={<Kids />} />
+        <Route path="/Kidspage" element={<Kidspage />} />
         <Route path="/collection" element={<Collection />} />
         <Route path="/Portfolio" element={<Portfolio />} />
         <Route path="/Footer" element={<Footer />} />

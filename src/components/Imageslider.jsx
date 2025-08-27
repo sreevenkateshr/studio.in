@@ -32,7 +32,7 @@ export default function ImageSlider() {
           rel="noreferrer"
           className="text-gray-600 hover:text-pink-500"
         >
-          @ZEROWATTSPHOTOGRAPHY
+          @Studioinphotography
         </a>
       </div>
 
