@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ import Link
 
 const imageCount = 18;
 
@@ -16,16 +17,19 @@ export default function SelectedWorks() {
             key={index}
             src={`https://picsum.photos/seed/${index + 1}/500/700`}
             alt={`photo-${index}`}
-            className="w-full rounded-lg object-cover mb-4 break-inside-avoid shadow"
+            className="w-full rounded-lg object-cover mb-4 break-inside-avoid shadow filter grayscale hover:grayscale-0 transition duration-500"
           />
         ))}
       </div>
 
-      {/* Button */}
+      {/* Button → Goes to /portfolio */}
       <div className="mt-12">
-        <button className="px-6 py-2 border border-black rounded-full text-sm tracking-wide hover:bg-black hover:text-white transition duration-300">
+        <Link
+          to="/portfolio"
+          className="px-6 py-2 border border-black rounded-full text-sm tracking-wide hover:bg-black hover:text-white transition duration-300 inline-block"
+        >
           View Portfolio
-        </button>
+        </Link>
       </div>
     </section>
   );

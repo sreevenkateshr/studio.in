@@ -92,11 +92,7 @@ export default function Footer() {
           <div>
             <h3 className="uppercase text-gray-300 font-semibold mb-4 tracking-wide">Locations</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="/locations/london" className="hover:text-pink-400 transition">London</a></li>
-              <li><a href="/locations/vellore" className="hover:text-pink-400 transition">Vellore</a></li>
-              <li><a href="/locations/salem" className="hover:text-pink-400 transition">Salem</a></li>
-              <li><a href="/locations/chennai" className="hover:text-pink-400 transition">Chennai</a></li>
-              <li><a href="/locations/coimbatore" className="hover:text-pink-400 transition">Coimbatore</a></li>
+              <li><a href="/locations/nagercoil" className="hover:text-pink-400 transition">Nagercoil</a></li>
             </ul>
           </div>
         </div>

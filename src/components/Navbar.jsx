@@ -78,6 +78,9 @@ const Navbar = () => {
             <Link to="/Aboutus">About</Link>
           </li>
           <li className="hover:text-black">
+            <Link to="/Aboutus">Blogs</Link>
+          </li>
+          <li className="hover:text-black">
             <Link to="/Contact">Contact</Link>
           </li>
           <li>
@@ -154,6 +157,11 @@ const Navbar = () => {
             <li>
               <Link to="/Aboutus" onClick={() => setIsMobileMenuOpen(false)}>
                 About
+              </Link>
+            </li>
+            <li>
+              <Link to="/Aboutus" onClick={() => setIsMobileMenuOpen(false)}>
+                Blogs
               </Link>
             </li>
             <li>
