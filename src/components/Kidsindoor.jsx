@@ -1,9 +1,13 @@
 // src/pages/KidsIndoor.jsx
 import React from "react";
+import Kidsnavbar from "../components/Kidsnavbar"; // adjust path as needed
 
 export default function KidsIndoor() {
   return (
     <section className="bg-gray-50 min-h-screen">
+      {/* Navbar */}
+      <Kidsnavbar />
+
       {/* Hero Section */}
       <div className="relative h-[70vh] w-full">
         <img

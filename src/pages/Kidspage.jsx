@@ -1,17 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import Kidsnavbar from "../components/Kidsnavbar";
-import Kidshome from "../components/Kidshome"
-import Kidsindoor from "../components/Kidsindoor"
+import Kidshome from "../components/Kidshome";
 
-export default function KidsHome() {
+export default function Kidspage() {
   return (
     <div>
-      <Navbar />
       <Kidsnavbar />
-<Kidshome />
-<Kidsindoor />
+      <Kidshome />
     </div>
   );
 }
-  
