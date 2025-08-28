@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ Only Link is needed
 import wedding1 from "../assets/wedding1.jpg";
 import wedding2 from "../assets/wedding2.jpg";
 import wedding3 from "../assets/wedding3.jpg";
@@ -14,7 +15,7 @@ export default function Portfolio() {
     { title: "Tamil Weddings", img: wedding3, link: "/portfolio/tamil" },
     { title: "Telugu Weddings", img: wedding4, link: "/portfolio/telugu" },
     { title: "Christian Weddings", img: wedding5, link: "/portfolio/christian" },
-    { title: "Hindu Weddings", img: tee10, link: "/portfolio/hindu-wedding" },
+    { title: "Hindu Weddings", img: tee10, link: "/portfolio/Hinduwedding" }
   ];
 
   return (
@@ -59,12 +60,12 @@ export default function Portfolio() {
 
               {/* Button below each card */}
               <div className="p-4 text-center">
-                <a
-                  href={item.link}
+                <Link
+                  to={item.link}
                   className="inline-block px-8 py-2 border border-black rounded-full text-black text-sm font-medium tracking-widest transition-colors duration-300 hover:bg-black hover:text-white"
                 >
                   VIEW MORE
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -72,7 +73,6 @@ export default function Portfolio() {
 
         {/* Three Buttons Section */}
         <div className="flex flex-col md:flex-row justify-center gap-8 mt-20 text-center">
-          {/* About Us */}
           <div className="flex flex-col items-center">
             <a
               href="#about"
@@ -83,7 +83,6 @@ export default function Portfolio() {
             <p className="mt-3 italic text-gray-700 text-base">Get to know us</p>
           </div>
 
-          {/* Wedding Films */}
           <div className="flex flex-col items-center">
             <a
               href="#wedding"
@@ -94,7 +93,6 @@ export default function Portfolio() {
             <p className="mt-3 italic text-gray-700 text-base">Explore our Work</p>
           </div>
 
-          {/* Contact Us */}
           <div className="flex flex-col items-center">
             <a
               href="#contact"
@@ -107,7 +105,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Footer outside section */}
       <Footer />
     </>
   );
