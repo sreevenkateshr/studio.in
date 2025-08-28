@@ -82,7 +82,7 @@ export default function Aboutus() {
           </p>
 
           {/* Signature */}
-          <p className="mt-10 text-2xl italic text-[#B78D7C]">— Team Paperboat</p>
+          <p className="mt-10 text-2xl italic text-[#B78D7C]">— Team Studio.in</p>
         </div>
       </div>
 

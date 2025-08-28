@@ -21,7 +21,7 @@ export default function KidsNavbar() {
         <h2 className="text-xl font-bold text-purple-700">Kids Studio.in</h2>
         <nav className="flex flex-wrap gap-6">
           {navItem("/kids", "Home")}
-          {navItem("/kids/indoor", "Indoor")}
+          {navItem("/kids/kidsindoor", "Indoor")}
           {navItem("/kids/outdoor", "Outdoor")}
           {navItem("/kids/birthday", "Birthday")}
           {navItem("/kids/gallery", "Gallery")}

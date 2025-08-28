@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import studioinlogo from "../assets/studioinlogo.png"; // Replace with your logo path
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
@@ -28,30 +27,42 @@ const Navbar = () => {
         {/* Left Menu - Desktop */}
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
           {/* Wedding Dropdown */}
-          <li
-            className="relative group cursor-pointer"
-            onMouseEnter={() => setOpenDropdown("wedding")}
-            onMouseLeave={() => setOpenDropdown(null)}
-          >
+          <li className="relative group cursor-pointer">
             <div className="flex items-center gap-1">
-              Wedding <ChevronDown size={16} />
+              Wedding
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
-            {openDropdown === "wedding" && (
-              <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-44 z-50 animate-fade-in">
-                <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link to="/wedding/traditional">Traditional</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link to="/wedding/candid">Candid</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link to="/wedding/destination">Destination</Link>
-                </li>
-              </ul>
-            )}
+            <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-44 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/traditional">Traditional</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/Christian">Christian</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/Muslim">Muslim</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/prewedding">Pre-Wedding</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/engagement">Engagement</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link to="/wedding/outdoor">Outdoor</Link>
+              </li>
+            </ul>
           </li>
 
-          {/* Kids - Just a Direct Link (NO dropdown) */}
+          {/* Kids Direct Link */}
           <li className="hover:text-black">
             <Link to="/kidspage">Kids</Link>
           </li>
@@ -78,7 +89,7 @@ const Navbar = () => {
             <Link to="/Aboutus">About</Link>
           </li>
           <li className="hover:text-black">
-            <Link to="/Aboutus">Blogs</Link>
+            <Link to="/Blogs">Blogs</Link>
           </li>
           <li className="hover:text-black">
             <Link to="/Contact">Contact</Link>
@@ -124,7 +135,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      to="/wedding/candid"
+                      to="/wedding/christian"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Candid
@@ -132,10 +143,34 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      to="/wedding/destination"
+                      to="/wedding/muslim"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Destination
+                    </Link>
+                  </li>
+                   <li>
+                    <Link
+                      to="/wedding/prewedding"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Pre-Wedding
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/wedding/engagement"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Engagement
+                    </Link>
+                  </li>
+                   <li>
+                    <Link
+                      to="/wedding/outdoor"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Outdoor
                     </Link>
                   </li>
                 </ul>
@@ -160,7 +195,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/Aboutus" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link to="/Blogs" onClick={() => setIsMobileMenuOpen(false)}>
                 Blogs
               </Link>
             </li>

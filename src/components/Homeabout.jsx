@@ -23,7 +23,7 @@ export default function AboutSection() {
 
         {/* Text Content */}
         <div className="md:col-span-1 text-gray-800">
-          <p className="uppercase text-sm tracking-widest text-gray-600 mb-4">Why Zero Watts?</p>
+          <p className="uppercase text-sm tracking-widest text-gray-600 mb-4">Why Studio.in?</p>
           <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-6 text-gray-900">
             Lasting memories through <br /> breathtaking, soulful imagery
           </h2>
