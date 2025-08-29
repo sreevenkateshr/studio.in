@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@fontsource/titillium-web": "^5.2.6",
     "axios": "^1.10.0",
