@@ -18,7 +18,7 @@ import Outdoor from "./components/Outdoor";
 
 // Kids Pages
 import Kidshome from "./components/Kidshome";
-import KidsIndoor from "./components/KidsIndoor";
+import Kidsindoor from "./components/Kidsindoor";
 import Kidsoutdoor from "./components/Kidsoutdoor";
 import Kidsbirthday from "./components/Kidsbirthday";
 import Kidsgallery from "./components/Kidsgallery";
@@ -48,7 +48,7 @@ function App() {
 
          {/* Kids Routes */}
         <Route path="/kids" element={<Kidshome />} />
-        <Route path="/kids/indoor" element={<KidsIndoor />} />
+        <Route path="/kids/indoor" element={<Kidsindoor />} />
         <Route path="/kids/outdoor" element={<Kidsoutdoor />} />
         <Route path="/kids/birthday" element={<Kidsbirthday />} />
         <Route path="/kids/gallery" element={<Kidsgallery />} />
