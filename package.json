@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "engines": {
-    "node": "18"
+    "node": "18.20.4"
   },
   "dependencies": {
     "@fontsource/titillium-web": "^5.2.6",
