@@ -1,5 +1,5 @@
 {
-  "name": "aveoclothing",
+  "name": "studio.in",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "engines": {
-      "node": "18.x",
-  "npm": "10.x"
+    "node": "22.x",
+    "npm": "10.x"
   },
   "dependencies": {
     "@fontsource/titillium-web": "^5.2.6",
