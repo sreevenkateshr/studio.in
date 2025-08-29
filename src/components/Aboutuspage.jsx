@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import founderImg from "../assets/founder.webp";
+
 import Footer from "./Footer";
 
 const images = [
@@ -14,6 +16,27 @@ const images = [
 export default function Aboutus() {
   return (
     <>
+      {/* 🔥 Featured Banner Section */}
+      <section className="relative h-[80vh] w-full">
+        <img
+          src="https://i0.wp.com/paperboatweddingphotography.com/wp-content/uploads/2024/07/DSC00663.jpg?fit=1920%2C1280&ssl=1"
+          alt="Featured Banner"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-6">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white uppercase drop-shadow-lg">
+            About Us
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-gray-200 max-w-3xl">
+            Celebrating your special moments with elegance and timeless style.
+          </p>
+          <button className="mt-6 px-8 py-3 border border-white text-white rounded-full tracking-widest text-sm hover:bg-white hover:text-black transition">
+            Explore More
+          </button>
+        </div>
+      </section>
+
       {/* Main About Section */}
       <div className="pt-20 md:pt-28 pb-16 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-4 sm:px-6 lg:px-8">
         {/* Left: Image Slider */}
@@ -82,7 +105,9 @@ export default function Aboutus() {
           </p>
 
           {/* Signature */}
-          <p className="mt-10 text-2xl italic text-[#B78D7C]">— Team Studio.in</p>
+          <p className="mt-10 text-2xl italic text-[#B78D7C]">
+            — Team Studio.in
+          </p>
         </div>
       </div>
 
@@ -108,8 +133,8 @@ export default function Aboutus() {
           {/* Image */}
           <div className="flex justify-center">
             <img
-              src="https://i0.wp.com/paperboatweddingphotography.com/wp-content/uploads/2021/03/roshan-founder.jpg?ssl=1"
-              alt="R Roshan"
+              src={founderImg}
+              alt="Manikandan"
               className="w-56 h-56 md:w-64 md:h-64 object-cover rounded-2xl shadow-lg transform hover:scale-105 transition duration-300"
             />
           </div>

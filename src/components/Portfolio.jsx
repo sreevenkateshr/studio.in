@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // ✅ Only Link is needed
+import { Link } from "react-router-dom";
 import wedding1 from "../assets/wedding1.jpg";
 import wedding2 from "../assets/wedding2.jpg";
 import wedding3 from "../assets/wedding3.jpg";
@@ -15,11 +15,29 @@ export default function Portfolio() {
     { title: "Tamil Weddings", img: wedding3, link: "/portfolio/tamil" },
     { title: "Telugu Weddings", img: wedding4, link: "/portfolio/telugu" },
     { title: "Christian Weddings", img: wedding5, link: "/portfolio/christian" },
-    { title: "Hindu Weddings", img: tee10, link: "/portfolio/Hinduwedding" }
+    { title: "Hindu Weddings", img: tee10, link: "/portfolio/Hinduwedding" },
   ];
 
   return (
     <>
+      {/* ✅ Banner Section */}
+      <section className="relative h-[70vh] w-full">
+        <img
+          src="https://i0.wp.com/paperboatweddingphotography.com/wp-content/uploads/2024/07/DSC00663.jpg?fit=1920%2C1280&ssl=1"
+          alt="Portfolio Banner"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-center px-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 uppercase">
+            Portfolio
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200 max-w-3xl">
+            Explore our best works – where every frame tells a timeless story.
+          </p>
+        </div>
+      </section>
+
+      {/* ✅ Portfolio Section */}
       <section className="bg-gray-100 py-20 px-4">
         {/* Heading */}
         <div className="max-w-4xl mx-auto text-center mb-16">

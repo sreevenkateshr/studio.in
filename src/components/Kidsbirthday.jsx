@@ -1,5 +1,6 @@
 import React from "react";
-import KidsNavbar from "./KidsNavbar";
+import KidsNavbar from "./Kidsnavbar";
+import Footer from "./Footer";
 
 export default function Birthday() {
   return (
@@ -21,6 +22,7 @@ export default function Birthday() {
           </p>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

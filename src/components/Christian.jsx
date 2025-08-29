@@ -1,6 +1,6 @@
 // src/pages/Christian.jsx
 import React from "react";
-
+import Footer from "./Footer";
 export default function Christian() {
   return (
     <section className="bg-gray-50 min-h-screen">
@@ -60,6 +60,7 @@ export default function Christian() {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

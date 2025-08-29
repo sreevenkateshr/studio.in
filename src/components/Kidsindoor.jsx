@@ -1,6 +1,7 @@
 // src/pages/KidsIndoor.jsx
 import React from "react";
 import Kidsnavbar from "../components/Kidsnavbar"; // adjust path as needed
+import Footer from "../components/Footer"
 
 export default function KidsIndoor() {
   return (
@@ -63,6 +64,7 @@ export default function KidsIndoor() {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

@@ -14,14 +14,14 @@ import Muslim from "./components/Muslim";
 import Footer from "./components/Footer";
 import PreWedding from "./components/Prewedding";
 import Engagement from "./components/Engagement";
-// import Outdoor from "./components/Outdoor";
+import Outdoor from "./components/Outdoor";
 
 // Kids Pages
-import KidsHome from "./pages/KidsHome";
+import Kidshome from "./components/Kidshome";
 import KidsIndoor from "./components/KidsIndoor";
-import Outdoor from "./components/Outdoor";
-import Birthday from "./components/Birthday";
-import Gallery from "./components/Gallery";
+import Kidsoutdoor from "./components/Kidsoutdoor";
+import Kidsbirthday from "./components/Kidsbirthday";
+import Kidsgallery from "./components/Kidsgallery";
 
 function App() {
   return (
@@ -40,18 +40,18 @@ function App() {
         <Route path="/wedding/muslim" element={<Muslim />} />
         <Route path="/wedding/prewedding" element={<PreWedding />} />
         <Route path="/wedding/engagement" element={<Engagement />} />
-        {/* <Route path="/wedding/outdoor" element={<Outdoor />} /> */}
+        <Route path="/wedding/outdoor" element={<Outdoor />} />
 
         <Route path="/portfolio/Hinduwedding" element={<Hinduwedding />} />
 
         <Route path="/footer" element={<Footer />} />
 
          {/* Kids Routes */}
-        <Route path="/kids" element={<KidsHome />} />
+        <Route path="/kids" element={<Kidshome />} />
         <Route path="/kids/indoor" element={<KidsIndoor />} />
-        <Route path="/kids/outdoor" element={<Outdoor />} />
-        <Route path="/kids/birthday" element={<Birthday />} />
-        <Route path="/kids/gallery" element={<Gallery />} />
+        <Route path="/kids/outdoor" element={<Kidsoutdoor />} />
+        <Route path="/kids/birthday" element={<Kidsbirthday />} />
+        <Route path="/kids/gallery" element={<Kidsgallery />} />
       </Routes>
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
-import KidsNavbar from "./KidsNavbar";
-
+import KidsNavbar from "./Kidsnavbar";
+import Footer from "./Footer";
 export default function Outdoor() {
   return (
     <section className="bg-gray-50 min-h-screen">
@@ -21,6 +21,7 @@ export default function Outdoor() {
           </p>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }
