@@ -1,5 +1,5 @@
 import React from "react";
-import bridalImg from "../assets/wedding1.jpg"; // Replace with your actual image path
+import wedding1 from "/assets/slide1.jpg"; // Replace with your actual image path
 
 export default function BookUs() {
   return (
@@ -7,7 +7,7 @@ export default function BookUs() {
       {/* Left: Image */}
       <div className="w-full md:w-1/2 mb-10 md:mb-0 flex justify-center">
         <img
-          src={bridalImg}
+          src={wedding1}
           alt="Bride"
           className="w-[90%] max-w-[400px] object-cover rounded-md"
         />

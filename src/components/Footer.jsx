@@ -2,7 +2,7 @@
     FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, 
     FaFacebookF, FaInstagram, FaYoutube, FaPinterestP, FaWhatsapp 
   } from "react-icons/fa";
-  import studioinlogo from "../assets/studioinlogo.png";
+  import studioinlogo from "/assets/studioinlogo.png";
 
   export default function Footer() {
     // Scroll to top function

@@ -1,9 +1,9 @@
 import React from "react";
-import denimImg from "../assets/denim01.avif";
-import tshirtImg from "../assets/shirts01..avif";
-import pantsImg from "../assets/pants01.avif";
-import suitImg from "../assets/jackets01.avif";
-import timelessImg from "../assets/timless.avif";
+import denimImg from "/assets/denim01.avif";
+import tshirtImg from "/assets/shirts01..avif";
+import pantsImg from "/assets/pants01.avif";
+import suitImg from "/assets/jackets01.avif";
+import timelessImg from "/assets/timless.avif";
 
 export default function TimelessStaples() {
   return (

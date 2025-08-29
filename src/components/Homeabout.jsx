@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; // ✅ Import Link
-import img1 from "../assets/homeabout1.jpg"; // First vertical image
-import img2 from "../assets/homeabout2.jpg"; // Stacked image 1
+import img1 from "/assets/homeabout1.jpg"; // First vertical image
+import img2 from "/assets/homeabout2.jpg"; // Stacked image 1
 
 export default function AboutSection() {
   return (

@@ -5,7 +5,7 @@ import SelectedWorks from "../components/SelectedWorks"
 import Homeservices from "../components/Homeservices";
 import RecentArrivals from "../components/RecentArrivals";
 import TimelessStaples from "../components/TimelessStaples";
-import Aveosway from "../components/Aveosway"; 
+// import Aveosway from "../components/Aveosway"; 
 import Midslide from "../components/Midslide"
 import Homevideo from "../components/Homevideo"
 import Homebookus from "../components/Homebookus";
@@ -23,7 +23,7 @@ export default function Home() {
       <SelectedWorks /> 
       <Homeservices />
      <TimelessStaples />
-     <Aveosway />
+     {/* <Aveosway /> */}
        <RecentArrivals />
       <Midslide />
       <Testimonials />

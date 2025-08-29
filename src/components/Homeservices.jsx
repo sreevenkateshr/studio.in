@@ -1,8 +1,8 @@
 import React from "react";
-import shirtsImg from "../assets/wedding1.jpg";
-import pantsImg from "../assets/wedding2.jpg";
-import jacketsImg from "../assets/wedding3.jpg";
-import denimImg from "../assets/wedding4.jpg";
+import shirtsImg from "/assets/wedding1.jpg";
+import pantsImg from "/assets/wedding2.jpg";
+import jacketsImg from "/assets/wedding3.jpg";
+import denimImg from "/assets/wedding4.jpg";
 
 export default function Categoryshowcase() {
   return (

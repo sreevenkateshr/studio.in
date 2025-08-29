@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import studioinlogo from "../assets/studioinlogo.png"; // Replace with your logo path
+import studioinlogo from "/assets/studioinlogo.png"; // Replace with your logo path
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -3,27 +3,27 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const slides = [
   {
-    image: "src/assets/slide1.jpg",
+    image: "/assets/slide1.jpg",
     title: "Stories from Studio.in",
     subtitle: "Premium Wedding Photographer",
   },
   {
-    image: "src/assets/slide2.jpg",
+    image: "/assets/slide2.jpg",
     title: "Stories from Studio.in",
     subtitle: "Premium Wedding Photographer",
   },
   {
-    image: "src/assets/slide3.jpg",
+    image: "/assets/slide3.jpg",
     title: "Stories from Studio.in",
     subtitle: "Premium Wedding Photographer",
   },
   {
-    image: "src/assets/slide4.jpg",
+    image: "/assets/slide4.jpg",
     title: "Stories from Studio.in",
     subtitle: "Premium Wedding Photographer",
   },
   {
-    image: "src/assets/slide5.jpg",
+    image: "/assets/slide5.jpg",
     title: "Stories from Studio.in",
     subtitle: "Premium Wedding Photographer",
   },

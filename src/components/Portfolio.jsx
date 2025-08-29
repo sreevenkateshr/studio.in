@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import wedding1 from "../assets/wedding1.jpg";
-import wedding2 from "../assets/wedding2.jpg";
-import wedding3 from "../assets/wedding3.jpg";
-import wedding4 from "../assets/wedding4.jpg";
-import wedding5 from "../assets/wedding5.jpg";
-import tee10 from "../assets/tee10.jpg";
+import wedding1 from "/assets/wedding1.jpg";
+import wedding2 from "/assets/wedding2.jpg";
+import wedding3 from "/assets/wedding3.jpg";
+import wedding4 from "/assets/wedding4.jpg";
+import wedding5 from "/assets/wedding5.jpg";
+import tee10 from "/assets/tee10.jpg";
 import Footer from "../components/Footer";
 
 export default function Portfolio() {

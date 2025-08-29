@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import founderImg from "../assets/founder.webp";
+import founderimg from "/assets/founder.webp";
 
 import Footer from "./Footer";
 
@@ -133,7 +133,7 @@ export default function Aboutus() {
           {/* Image */}
           <div className="flex justify-center">
             <img
-              src={founderImg}
+              src={founderimg}
               alt="Manikandan"
               className="w-56 h-56 md:w-64 md:h-64 object-cover rounded-2xl shadow-lg transform hover:scale-105 transition duration-300"
             />
