@@ -1,5 +1,6 @@
 // src/components/BlogSection.jsx
 import React from "react";
+import Footer from "./Footer";
 
 export default function BlogSection() {
   const blogs = [
@@ -77,6 +78,7 @@ export default function BlogSection() {
           ))}
         </div>
       </div>
+      <Footer />
     </section>
   );
 }
